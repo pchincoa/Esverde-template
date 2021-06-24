@@ -1,0 +1,1135 @@
+/* ------------------------*/
+/*  Styles CSS: esver.de   */
+/*  Autor: Pedro Chincoa / Bendita varsovia Studio */
+/*  Version 0.1 */
+/* ------------------------*/
+
+* {
+  padding: 0;
+  border: none;
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  color: var(--maincolor);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+
+
+}
+
+/* -------------------- */
+/*   Farbe Variables   */
+/* --------------------*/
+
+:root {
+  --bg: #ffffff;
+  --bg2: #f0faf1;
+  --bgfull: #e2f5e3;
+  --heading: #3b5249;
+  --maincolor: #382933;
+}
+
+/* -------------------- */
+/*  Typographie Style   */
+/* --------------------*/
+/* Überschriften */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--maincolor);
+  font-weight: 600;
+  font-family: "Rubik", sans-serif;
+}
+
+h2 {
+  font-size: 4vmax;
+}
+
+h3 {
+  font-size: 3vmin;
+}
+
+/* Absätze, Links und Span */
+p,
+a,
+span {
+  color: var(--maincolor);
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+/* --------------------------------- */
+/* Header: Logo, Navigation, Inhalte */
+/* ----------------------------------*/
+
+#header {
+  min-height: 100vh;
+
+  background-color: var(--bg);
+  position: relative;
+}
+
+.logo-nav-container {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 20px auto;
+
+  box-shadow: 0px 1px 0px 0 rgba(0, 0, 0, 0.15);
+}
+
+.logo h1 {
+  padding-bottom: 0.5em;
+  text-align: center;
+  line-height: 7.5vh;
+
+  font-size: 2.5em;
+}
+
+.logo span {
+  font-size: 2em;
+
+  color: var(--heading);
+}
+
+#main-navi {
+  font-family: "Rubik"sans-serif;
+  font-weight: 600;
+  line-height: 2vh;
+}
+
+#main-navi ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+#main-navi ul li a {
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  display: block;
+  padding: 0em 0.5em;
+  margin: 0em 0.4em;
+
+  transition: 0.3s all ease;
+}
+
+#main-navi ul li a:hover {
+  background-color: var(--bgfull);
+  letter-spacing: 1px;
+  border-radius: 20px;
+}
+
+/* Header unter-Inhalte */
+
+#content-header {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.content-header__title p {
+  font-size: 3vmax;
+  font-weight: 400;
+  margin: 0.2em;
+  text-align: center;
+  padding-left: 0.5em;
+}
+
+.content-header__title p:first-child {
+  color: var(--heading);
+  background: var(--bg2);
+  padding: 0.16em;
+  width: 79%;
+  text-align: center;
+  border-radius: 40px;
+}
+
+.content-header__img {
+  height: 60vh;
+  width: 40vw;
+  padding-left: 2em;
+}
+
+/* -----------------------*/
+/* Full Menu Navigation */
+/* ----------------------*/
+.container-menu {
+  background: var(--bgfull);
+  color: var(--maincolor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 100;
+  text-align: center;
+  top: 0;
+  clip-path: circle(50px at 99% 0);
+  transition: 0.7s ease all;
+}
+
+.container-menu.active {
+  clip-path: circle(100% at 50% 0);
+}
+
+.btn-open-menu {
+  cursor: pointer;
+  padding: 0.3em;
+  position: fixed;
+  right: -2px;
+  top: -1.6%;
+}
+
+.btn-open-menu.active {
+  rotate: 90deg;
+}
+
+.btn-open-menu:hover {
+  animation: rotation 1.5s alternate;
+}
+
+/* Animation Full Menu Navigation */
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(10deg);
+  }
+
+  40% {
+    transform: rotate(-15deg);
+  }
+
+  60% {
+    transform: rotate(15deg);
+  }
+
+  80% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Full Menu Navigation Items */
+
+.items-fullmenu {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.items-fullmenu li {
+  list-style: none;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.container-menu.active li {
+  animation: moving 1s ease;
+}
+
+@keyframes moving {
+  from {
+    transform: translateY(1000px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.items-fullmenu li a {
+  text-decoration: none;
+  font-size: 2.5em;
+  letter-spacing: 1px;
+  padding: 0em 0.5em;
+
+  color: var(--maincolor);
+
+  transition: 0.2s ease all;
+}
+
+.items-fullmenu li a:hover {
+  background: var(--bg);
+  border-radius: 20px;
+}
+
+/* -----------------------*/
+/*    Arrow Styles       */
+/* ----------------------*/
+
+/*  Arrow Header */
+
+.arrow-down {
+  position: absolute;
+  height: 10vh;
+  top: 85%;
+  left: 50%;
+  transform: translate(85%, -50%);
+  transform: rotate(90deg);
+}
+
+/*  Arrow Footer */
+.arrow-up {
+  position: sticky;
+  height: 10vh;
+  top: 80%;
+  left: 99%;
+
+  transform: rotate(-90deg);
+}
+
+/* ---------------------*/
+/* MAMA Container - Inhalte */
+/* --------------------*/
+
+#mama {
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+  max-width: 100vw;
+
+}
+
+/* ---------------------*/
+/* Team Section */
+/* --------------------*/
+
+#team {
+  min-height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg2);
+  font-size: 2em;
+  padding: 2em;
+}
+
+#team .team-logo {
+  font-family: "Rubik", sans-serif;
+  font-size: 1em;
+}
+
+.team-logo__point {
+  color: var(--heading);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
+}
+
+#team h2 {
+  padding-bottom: 0.5em;
+  text-align: center;
+}
+
+#team p {
+  font-size: 0.8em;
+  padding-bottom: 2em;
+}
+
+.team-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-item {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background: var(--bgful);
+  padding: 1rem;
+  margin: 1rem;
+  transition: 0.3s all linear;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+}
+
+.team-item img {
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+}
+
+.team-item:hover {
+  background: var(--bg);
+}
+
+.team-slogan {
+  color: var(--heading);
+  border-bottom: 0.158em solid rgba(56, 41, 51, 0.1);
+  padding-bottom: 0.05em;
+  text-align: center;
+}
+
+#team .team-item__info a {
+  color: var(--heading);
+  font-size: 0.69em;
+}
+
+#team .team-item__info p {
+  color: var(--heading);
+  font-size: 0.5em;
+  opacity: 0.5;
+}
+
+/* -----------------------*/
+/* Gärtnerei Section */
+/* ----------------------*/
+#gartnerei {
+  min-height: 100vh;
+  font-size: 1.5em;
+  padding: 2em;
+}
+
+#gartnerei h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#gartnerei p {
+  font-size: 0.8em;
+  padding-bottom: 2em;
+}
+
+#gartnerei .gartnerei-text {
+  margin-left: 2em;
+  padding: 2em;
+}
+
+.garten-text {
+  background-color: var(--bgfull);
+  border-radius: 20px;
+  font-size: 1.5em;
+  padding: 0.1em 0.2em;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+}
+
+.gartnerei-container {
+  background-color: ;
+  display: flex;
+  flex-flow: row wrap;
+
+  justify-content: space-around;
+}
+
+#gartnerei h3 {
+  font-size: 1.2em;
+}
+
+#gartnerei a {
+  font-size: 0.9em;
+}
+
+.gartnerei__img {
+  padding: 1em;
+  padding-bottom: 0.3em;
+  margin-bottom: 1.2em;
+  background: var(--bg2);
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+}
+
+.gartnerei__title {
+  text-align: center;
+  padding: 0.7em 0em;
+  margin-bottom: 0.5em;
+  background-color: var(--bgfull);
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+}
+
+.gartnerei__title a {}
+
+/* ---------------------------------*/
+/* Gartentipps  Section */
+/* ---------------------------------*/
+
+.tipps__video {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+/* ---------------------------------*/
+/* Pflanzen  Section - Gallery */
+
+/* ---------------------------------*/
+.slider {
+  display: flex;
+  background-color: var(--bg2);
+}
+
+.slides {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.slider img {
+  justify-content: space-between;
+}
+
+/* ---------------------------------*/
+/* Landschaftsgärtner  Section */
+/* ---------------------------------*/
+
+#landschaftsgartner {
+  min-height: 100vh;
+  background-color: var(--bg2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  font-size: 1.5em;
+  padding: 1em 0.1em;
+}
+
+#landschaftsgartner h2 {
+  text-align: center;
+}
+
+.landschaft-text p {
+  width: 80vw;
+  font-size: 1em;
+  display: block;
+}
+
+#landschaftsgartner ul {
+  background: var(--bgfull);
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+  border-radius: 20px;
+  padding: 1em 1em;
+}
+
+#landschaftsgartner ul li {
+  border-bottom: 1px solid var(--heading);
+  padding: 0.5em 0.5em;
+}
+
+#landschaftsgartner ul li:last-child {
+  border-bottom: none;
+  padding-bottom: none;
+}
+
+#landschaftsgartner ul li a {
+  transition: all 0.3s linear;
+}
+
+#landschaftsgartner ul a:hover {
+  color: var(--heading);
+}
+
+#landschaftsgartner li:first-child {
+  background: var(--bg2);
+
+  padding: 0.2em 0.4em;
+  border-radius: 20px;
+}
+
+#landschaft-service,
+#landschaft-standort,
+#landschaft-planung {
+  margin: 3em;
+}
+
+/* -----------------------*/
+/* Floristik Section */
+/* ----------------------*/
+
+#floristik {
+  min-height: 100vh;
+  background-color: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  font-size: 1.5em;
+  padding: 1em 0.12em;
+}
+
+#floristik h2 {
+  text-align: center;
+}
+
+.floristik-text p {
+  display: block;
+  width: 85vw;
+}
+
+#gallery video {
+  object-fit: cover;
+  opacity: 1;
+}
+
+.floristik-services {
+  padding: 1.5em 3em;
+  text-align: center;
+  margin-right: 0.5em;
+}
+
+.floristik-services ul {
+  margin-bottom: 3em;
+}
+
+.floristik-services li {
+  margin-bottom: 0.8em;
+}
+
+.floristik-services a {
+  padding: 0.1em 0.2em;
+  font-size: 1.2em;
+  font-weight: 600;
+  background-color: var(--bgfull);
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+}
+
+/* -----------------------*/
+/* Kontakt - Form */
+/* ----------------------*/
+
+#kontakt {
+  min-height: 100vh;
+  background-color: var(--bg2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  font-size: 2em;
+}
+
+#kontakt h2 {
+  text-align: center;
+}
+
+#kontakt p {
+  font-size: 0.6em;
+  padding-bottom: 2em;
+  text-align: center;
+}
+
+/*--Form CSS--*/
+
+.container-form {
+  height: 100%;
+  width: 60%;
+  border-radius: 20px;
+  margin-bottom: 5em;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  background: var(--bg);
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+
+  /*background: var(--bg) url(../icons/crayon-239.png) no-repeat right;*/
+}
+
+.formular {
+  color: var(--maincolor);
+  font-size: 0.8em;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+
+  height: 50%;
+  width: 100%;
+  padding: 1em;
+
+  background: var(--bgfull);
+  font-family: "Poppins", sans-serif;
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+}
+
+.formular label input textarea {
+  align-items: center;
+  justify-content: center;
+}
+
+#text-form {
+  padding: 1em;
+}
+
+.formular label {
+  margin-left: 0.4em;
+  font-size: 0.7em;
+}
+
+.formular input {
+  padding: 0.5em;
+  margin: 1.5em;
+  margin-left: 0.5em;
+  border-radius: 20px;
+}
+
+.formular textarea {
+  border-radius: 20px;
+}
+
+textarea:focus,
+input:focus {
+  border: 2px solid bg;
+}
+
+.submit-button {
+  font-size: 0.88em;
+  text-align: center;
+  border-radius: 20px;
+  background: var(--heading);
+  color: var(--bg);
+  transition: 0.3s all linear;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: var(--bg);
+  color: var(--heading);
+}
+
+/* --------------*/
+/* Impressum */
+/* --------------*/
+
+#impressum {
+  margin: 0 auto;
+  background: var(--bg);
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  min-height: 100vh;
+  display: flex;
+}
+
+.impressum-content__central {
+  margin: 4em auto;
+  border-radius: 20px;
+  width: 80vw;
+  background: var(--bg2) url(../icons/team2.png) right no-repeat;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+}
+
+.impressum-content__central .impressum-title {
+  padding: 0.4em 1em;
+  font-size: 2em;
+}
+
+.impressum-content__central h3 {
+  padding: 0.5em 2em;
+  font-size: 1.5em;
+}
+
+.impressum-content__central p {
+  padding: 0.5em 2em;
+  margin-bottom: 0.5em;
+
+  font-size: 1.3em;
+}
+
+/* --------------*/
+/* Zusatzdienste */
+/* --------------*/
+
+#grabbetreuung {
+  display: flex;
+  width: 80vw;
+  min-height: 80vh;
+
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+  margin: 50px auto;
+}
+
+#grabbetreuung-content__central {
+  background: var(--bg2);
+  padding-left: 2em;
+  padding-right: 2em;
+  min-height: 80vh;
+  width: 60vw;
+  border-radius: 8px;
+
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+}
+
+#grabbetreuung-content__central h2 {
+  font-size: 2.2em;
+}
+
+#aside-zusatz {
+  background: var(--bgfull);
+  min-height: 80vh;
+  width: 20vw;
+  padding: 1em 1;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+}
+
+#aside-zusatz ul li {
+  margin: 2em;
+}
+
+#aside-zusatz a {
+  font-size: 1.2em;
+}
+
+#aside-zusatz .list__gartentipps {
+  font-size: 0.95em;
+  padding-left: 2.5em;
+  margin: 0.5em;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.grabbetreuung-content__central2 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.grabflege-standorte ul {
+  width: 400px;
+  padding: 2em;
+}
+
+.grabflege-standorte li {
+  padding: 0.5em;
+  margin-bottom: 0.2-5em;
+}
+
+#grabbetreuung-content__central a {
+  padding: 0.3em 0.4em;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--heading);
+  border-color: var(--heading);
+  border-radius: 20px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+}
+
+.img-grabbe img {
+  float: right;
+  justify-content: center;
+  display: block;
+  padding: 1em;
+}
+
+/* --------------*/
+/* Galerie */
+/* --------------*/
+
+#gallery {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1em;
+}
+
+.mama-gallery .gallery-title {
+  padding: 0.5em 1em;
+  padding-top: 3em;
+  font-size: 2em;
+  text-align: center;
+}
+
+.mama-gallery p {
+  padding: 0.5em;
+  font-size: 1.2em;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  display: block;
+}
+
+#gallery .gallery-item {
+  list-style: none;
+  height: 33vh;
+  flex-grow: 1;
+  margin: 0.5vmin;
+}
+
+#gallery .gallery-item .gallery-item__img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+/* -----------------*/
+/* Footer */
+/* -----------------*/
+
+#footer {
+  height: 20vh;
+  background-color: var(--heading);
+  color: var(--bg);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column wrap;
+
+  font-size: 2em;
+  padding: 1.5em;
+}
+
+#footer a {
+  color: var(--bg);
+  font-size: 0.6em;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+#footer a:hover {
+  border-bottom: 0.128em solid var(--bg);
+  padding-bottom: 0.05em;
+}
+
+/* -------------------- */
+/*  SCROLL-BAR   */
+/* --------------------*/
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(13, 13, 12, 0.8);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  _-webkit-box-shadow: inset 0 0 6px rgba(88, 173, 19, 0.8);
+  background-color: var(--heading);
+}
+
+/* -------------------- */
+/*  MEDIA QUERY   */
+/* --------------------*/
+
+@media screen and (max-width: 968px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .logo-nav-container {
+    height: 25vh;
+  }
+
+  #main-navi ul {
+    padding: 1em;
+  }
+
+  .content-header__img {
+    padding-bottom: 2em;
+  }
+
+  #grabbetreuung {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 10em;
+  }
+
+  #grabbetreuung-content__central {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  #aside-zusatz {
+    width: 100%;
+    height: 100vh;
+  }
+
+  #impressum {
+    margin-top: 10em;
+  }
+
+  .impressum-content__central {
+    margin: 4em auto;
+    border-radius: 20px;
+    width: 80vw;
+    background-image: none;
+  }
+
+  #gallery .floristik-services {
+    margin: 0 auto;
+  }
+
+  .slides {
+    justify-content: center;
+  }
+}
+
+/* Anfang--MEDIA QUERY max-width 769-- */
+
+@media screen and (max-width: 769px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .logo-nav-container {
+    margin: 0px auto;
+    box-shadow: none;
+  }
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  #main-navi ul {
+    text-align: center;
+    background-color: var(--bg2);
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15), inset 1px 2px 0 0 #fff;
+  }
+
+  #main-navi .main-menu__item {
+    padding: 10px;
+  }
+
+  .content-header__title :first-child {
+    margin-top: 6em;
+    width: 100%;
+  }
+
+  .content-header__img {
+    height: 30vh;
+    width: 55%;
+  }
+
+  .container-form {
+    height: 100%;
+    width: 85%;
+  }
+
+  #footer a {
+    font-size: 0.55em;
+  }
+
+  .arrow-up {
+    display: none;
+  }
+}
+
+/* Ende--MEDIA QUERY max-width 769px-- */
+/* Anfang--MEDIA QUERY max-width 560px-- */
+
+@media screen and (max-width: 560px) {
+  body {
+    overflow-y: hidden;
+  }
+
+  .logo-nav-container {
+    height: 27vh;
+  }
+
+  #mama-impressum {
+    height: 100%;
+  }
+
+  .impressum-content__central {
+    width: 100%;
+  }
+
+  #footer {
+    font-size: 2em;
+    flex-flow: row wrap;
+    height: 90vmin;
+  }
+}
+
+/* Ende--MEDIA QUERY max-width 560px-- */
+/* Anfang--MEDIA QUERY max-width 375px-- */
+
+@media screen and (max-width: 375px) {
+  body {
+    overflow-y: hidden;
+  }
+
+
+  .logo-nav-container {
+    height: 50vh;
+  }
+
+  .logo-nav-container ul li {
+    padding-bottom: 1em;
+  }
+
+  .logo-nav-container ul a {
+    font-size: 1.5em !important;
+  }
+
+  #main-navi ul {
+    padding: 1.5em;
+  }
+
+  .content-header__title :first-child {
+    margin-top: 2em;
+    width: 100%;
+  }
+
+  .content-header__img {
+    height: 20vh;
+    margin-bottom: 8em;
+  }
+
+  #grabbetreuung h2 {
+    font-size: 1.6em;
+  }
+
+  #grabbetreuung {
+    margin-top: 2em;
+  }
+
+  .grabflege-standorte {
+    text-align: center;
+  }
+
+  #landschaftsgartner h2 {
+    font-size: 1.3em;
+  }
+
+  #footer {
+    font-size: 2em;
+    flex-flow: row wrap;
+    min-height: 80vh;
+    width: 100%;
+  }
+
+  #impressum {
+    margin-top: 0em;
+  }
+}
+
+/* ----------------------------------- */
+/* Ende--MEDIA QUERY max-width 375px-- */
+/* ----------------------------------- */
+/* ------------ ENDE STYLES CSS-------- */
