@@ -76,7 +76,6 @@ span {
 
 #header {
   min-height: 100vh;
-
   background-color: var(--bg);
   position: relative;
 }
@@ -103,7 +102,6 @@ span {
 
 .logo span {
   font-size: 2em;
-
   color: var(--heading);
 }
 
@@ -840,6 +838,7 @@ input:focus {
   float: right;
   justify-content: center;
   display: block;
+  max-width: 320px;
   padding: 1em;
 }
 
@@ -1073,7 +1072,6 @@ input:focus {
   body {
     overflow-y: hidden;
   }
-
 
   .logo-nav-container {
     height: 50vh;
